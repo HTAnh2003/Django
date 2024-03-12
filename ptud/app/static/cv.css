@@ -55,3 +55,27 @@ body {
     margin-bottom: 5px; 
     list-style-type: disc;
 }
+
+/* CSS để định dạng nút trang chủ */
+.home-link {
+    position: absolute; /* Đặt nút tuyệt đối */
+    top: 20px; /* Khoảng cách từ top là 20px */
+    left: 20px; /* Khoảng cách từ trái là 20px */
+    background-color: #81a3c7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    z-index: 999; /* Đảm bảo nút hiển thị trên các phần khác của trang */
+}
+
+
+.home-link:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    margin: 50px auto; /* Để tạo khoảng cách giữa container và nút trang chủ */
+    /* Thêm các thuộc tính CSS khác nếu cần */
+}

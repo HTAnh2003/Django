@@ -214,3 +214,11 @@
 li{
     color : rgb(110, 73, 73);
 }
+
+.home-link {
+    color: #A33821; /* Màu chữ */
+    background-color: #4a2ac8; /* Màu nền */
+    padding: 5px 10px; /* Điều chỉnh padding cho đẹp */
+    border-radius: 5px; /* Điều chỉnh góc cong */
+    text-decoration: none; /* Loại bỏ gạch chân */
+}

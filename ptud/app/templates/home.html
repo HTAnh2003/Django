@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], select {
+            width: calc(100% - 70px);
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button[type="submit"], button[type="button"] {
+            padding: 7px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover, button[type="button"]:hover {
+            background-color: #0056b3;
+        }
+        button[type="button"] {
+            background-color: #6c757d;
+            margin-left: 10px;
+        }
+        button[type="button"]:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chào mừng bạn đến trang chủ!</h1>
+        
+        <p>Dưới đây là danh sách các link điều hướng đến nội dung tương ứng:</p>
+        <ul>
+            <li><a href="{% url 'todo1' %}">Todo 1</a></li>
+            <li><a href="{% url 'cv1' %}">CV 1 (template mẫu ở lab trước)</a></li>
+            <li><a href="{% url 'cv2' %}">CV 2 (template mẫu ở lab trước)</a></li>
+        </ul>
+        <p>Bạn cũng có thể xem CV của người dùng bằng cách nhập tên người dùng vào ô dưới đây:</p>
+        <form method="get" id="username-form" action="">
+            <label for="username">Nhập tên người dùng:</label>
+            <input type="text" id="username" name="username">
+            <br>
+            <label for="cv-type">Chọn giao diện CV:</label>
+            <select id="cv-type" name="cv_type">
+                <option value="1">Giao diện 1</option>
+                <option value="2">Giao diện 2</option>
+            </select>
+            <br>
+            <button type="submit">Xem CV của người dùng</button>
+        </form>
+        
+        <!-- Thêm một liên kết hoặc nút cho tên người dùng mẫu -->
+        <button type="button" onclick="setSampleUser()">Tên người dùng mẫu</button>
+    </div>
+    
+    <script>
+    function setSampleUser() {
+        // Lấy ô văn bản tên người dùng
+        var usernameInput = document.getElementById('username');
+        // Gán giá trị người dùng mẫu
+        usernameInput.value = 'zortiz'; 
+    }
+
+    document.getElementById('username-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Ngăn chặn gửi form mặc định
+
+        var usernameInput = document.getElementById('username').value;
+        var cvTypeInput = document.getElementById('cv-type').value;
+        
+        if (usernameInput.trim() !== '') { // Kiểm tra nếu giá trị username không trống
+            var url = '';
+            if (cvTypeInput === '1') {
+                url = "{% url 'cv_2' username='usernameValue' %}".replace('usernameValue', usernameInput);
+            } else if (cvTypeInput === '2') {
+                url = "{% url 'view_cv' username='usernameValue' %}".replace('usernameValue', usernameInput);
+            }
+            window.location.href = url;
+        }
+    });
+    </script>
+</body>
+</html>

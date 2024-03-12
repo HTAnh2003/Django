@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from .models import CV, Task
 from django.contrib.auth.models import User
 from faker import Faker 
+from django.http import HttpResponse
+
+def home(request):
+    return render(request, 'home.html')
 
 def generate_fake_data(request):
     fake = Faker()
@@ -29,8 +33,7 @@ def view_cv(request, username):
         cv = CV.objects.get(user__username=username)
     except CV.DoesNotExist:
         # Xử lý khi không tìm thấy CV cho người dùng này
-        cv = None
-
+        return HttpResponse("Người dùng không tồn tại trong hệ thống.")
     return render(request, 'cv_1.html', {'cv': cv})
 
 def cv_2(request, username):
@@ -38,7 +41,7 @@ def cv_2(request, username):
         cv = CV.objects.get(user__username=username)
     except CV.DoesNotExist:
         # Xử lý khi không tìm thấy CV cho người dùng này
-        cv = None
+        return HttpResponse("Người dùng không tồn tại trong hệ thống.")
 
     return render(request, 'cv_2.html', {'cv': cv})
 

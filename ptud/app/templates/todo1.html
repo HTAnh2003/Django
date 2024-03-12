@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <a href="{% url 'home' %}" class="home-link">Trang chủ</a>
         <h1>Danh sách công việc</h1>
         <ul class="to-do-list">
             {% for task in tasks %}
