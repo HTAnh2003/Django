@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #a02d4a;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .todo-list {
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        form input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #105520;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Danh sách công việc</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'todo1' %}">Giao diện 1</a></li>
+                <li><a href="{% url 'todo2' %}" target="_blank">Giao diện 2</a></li>    
+            </ul>
+        </nav>
+    </header>
+    <div class="todo-list" id="interface1">
+        <form id="taskForm">
+            <input type="text" id="newTask" placeholder="Thêm công việc mới">
+            <button type="submit">Thêm</button>
+        </form>
+        <ul id="tasks">
+            <!-- Danh sách công việc sẽ được thêm ở đây -->
+        </ul>
+    </div>
+
+    
+    <footer>
+        <p>Made with ❤️ by Tien Anh</p>
+    </footer>
+    
+    <!-- <script src="script.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const taskForm = document.getElementById('taskForm');
+            const newTaskInput = document.getElementById('newTask');
+            const taskList = document.getElementById('tasks');
+
+            taskForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const taskText = newTaskInput.value.trim();
+                if (taskText !== '') {
+                    addTask(taskText);
+                    newTaskInput.value = '';
+                }
+            });
+
+            function addTask(taskText) {
+                const li = document.createElement('li');
+                li.textContent = taskText;
+                taskList.appendChild(li);
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.addEventListener('change', function () {
+                    if (checkbox.checked) {
+                        li.style.textDecoration = 'line-through';
+                    } else {
+                        li.style.textDecoration = 'none';
+                    }
+                });
+                li.appendChild(checkbox);
+            }
+        });
+    </script>
+</body>
+</html>

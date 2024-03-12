@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+    <link rel="stylesheet" href="{% static 'todo1.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Danh sách công việc</h1>
+        <ul class="to-do-list">
+            {% for task in tasks %}
+            <li class="item {% if task.completed %}completed{% endif %}">
+                <form action="{% url 'complete_task' task.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="checkbox" id="item-{{ task.id }}" {% if task.completed %}checked{% endif %} onchange="this.form.submit()">
+                    <label for="item-{{ task.id }}">{{ task.title }}</label>
+                </form>
+                <form action="{% url 'delete_task' task.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="delete-button" type="submit">Xóa</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+        <form action="{% url 'add_task' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="task_text" placeholder="Thêm công việc mới">
+            <button type="submit">Thêm</button>
+        </form>
+    </div>
+</body>
+</html>

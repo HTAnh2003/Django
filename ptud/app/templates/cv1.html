@@ -1,0 +1,157 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CV</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-9">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <div class="resume-base bg-primary user-dashboard-info-box p-4">
+              <div class="profile">
+                <div class="jobster-user-info">
+                  <div class="profile-avatar">
+                    <img class="img-fluid " src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+                  </div>
+                  <div class="profile-avatar-info mt-3">
+                    <h5 class="text-white">Hoàng Tiến Anh</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="about-candidate border-top">
+                <!-- <div class="candidate-info">
+                  <h6 class="text-white">Name:</h6>
+                  <p class="text-white">Anne Smith</p>
+                </div> -->
+                <div class="candidate-info">
+                  <h6 class="text-white">Email:</h6>
+                  <p class="text-white">hoangtienanh@gmail.com</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">SĐT:</h6>
+                  <p class="text-white">098888888</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">Ngày sinh:</h6>
+                  <p class="text-white">2003-07-13</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">Địa chỉ:</h6>
+                  <p class="text-white">Hà Tĩnh</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">Giới tính:</h6>
+                  <p class="text-white">Nam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="resume-experience">
+              <div class="timeline-box">
+                <h5 class="resume-experience-title">Education:</h5>
+                <div class="jobster-candidate-timeline">
+                  <div class="jobster-timeline-item">
+                    <div class="jobster-timeline-cricle">
+                      <i class="far fa-circle"></i>
+                    </div>
+                    <div class="jobster-timeline-info">
+                      <div class="dashboard-timeline-info">
+                        <span class="jobster-timeline-time">2021 - Pres</span>
+                        <h6 class="mb-2">Major: Data Science</h6>
+                        <span>- Industrial University of Ho Chi Minh City</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-box mt-4">
+                <h5 class="resume-experience-title">Project</h5>
+                <div class="jobster-candidate-timeline">
+                  <div class="jobster-timeline-item">
+                    <div class="jobster-timeline-cricle">
+                      <i class="far fa-circle"></i>
+                    </div>
+                    <div class="jobster-timeline-info">
+                      <div class="dashboard-timeline-info">
+                        <span class="jobster-timeline-time">2023</span>
+                        <h6 class="mb-2">Information-checking task</h6>
+                        <span>UIT Data Science Challenge</span>
+                        <p class="mt-2">phoBert · Question Answering</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-box mt-4">
+                <h5 class="resume-experience-title">Awards:</h5>
+                <div class="jobster-candidate-timeline">
+                  <div class="jobster-timeline-item">
+                    <div class="jobster-timeline-cricle">
+                      <i class="far fa-circle"></i>
+                    </div>
+                    <div class="jobster-timeline-info">
+                      <div class="dashboard-timeline-info">
+                        <span class="jobster-timeline-time">2023</span>
+                        <h6 class="mb-2">Top 6 UIT Challenge 2023 Competitions (Encouragement Prize)</h6>
+                        <span>Group B - UIT Data Science Challenge 2023</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="jobster-timeline-item mb-0">
+                    <div class="jobster-timeline-cricle">
+                      <i class="far fa-circle"></i>
+                    </div>
+                    <div class="jobster-timeline-info">
+                      <div class="dashboard-timeline-info">
+                        <span class="jobster-timeline-time">2023</span>
+                        <h6 class="mb-2">Received a scholarship at IUH</h6>
+                        <span>Industrial University of Ho Chi Minh City</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline-box mt-4">
+                  <h5 class="resume-experience-title">Specialized Skills :</h5>
+                  <!-- <div class="jobster-candidate-timeline">
+                    <div class="jobster-timeline-item">
+                      <div class="jobster-timeline-cricle">
+                        <i class="far fa-circle"></i>
+                      </div>
+                      <div class="jobster-timeline-info">
+                        <div class="dashboard-timeline-info">
+                          <h6 class="mb-2">Top 6 UIT Challenge 2023 Competitions (Encouragement Prize)</h6>
+                          <span>Group B - UIT Data Science Challenge 2023</span>
+                        </div>
+                      </div>
+                    </div> -->
+                    <ul>
+                      <li>Machine Learning,Deep Learning.</li>
+                      <li>Crawl data with Beautiful Soup and Selenium.</li>
+                      <li>Having logical thinking, statistical, mathematical, optimization, and probability knowledge.</li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

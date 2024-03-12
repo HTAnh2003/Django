@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CV</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-9">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <div class="resume-base bg-primary user-dashboard-info-box p-4">
+              <div class="profile">
+                <div class="jobster-user-info">
+                  <div class="profile-avatar">
+                    <img class="img-fluid " src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+                  </div>
+                  <div class="profile-avatar-info mt-3">
+                    <h5 class="text-white">{{ cv.full_name }}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="about-candidate border-top">
+                <div class="candidate-info">
+                  <h6 class="text-white">Email:</h6>
+                  <p class="text-white">{{ cv.email }}</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">Phone:</h6>
+                  <p class="text-white">{{ cv.phone_number }}</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">Date of Birth:</h6>
+                  <p class="text-white">{{ cv.date_of_birth }}</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">Address:</h6>
+                  <p class="text-white">{{ cv.address }}</p>
+                </div>
+                <div class="candidate-info">
+                  <h6 class="text-white">Gender:</h6>
+                  <p class="text-white">{{ cv.gender }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="resume-experience">
+              <div class="timeline-box">
+                <h5 class="resume-experience-title">Education:</h5>
+                <div class="jobster-candidate-timeline">
+                  <div class="jobster-timeline-item">
+                    <div class="jobster-timeline-cricle">
+                      <i class="far fa-circle"></i>
+                    </div>
+                    <div class="jobster-timeline-info">
+                      <div class="dashboard-timeline-info">
+                        <h6 class="mb-2">{{ cv.education }}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-box mt-4">
+                <h5 class="resume-experience-title">Projects</h5>
+                <div class="jobster-candidate-timeline">
+                  <div class="jobster-timeline-item">
+                    <div class="jobster-timeline-cricle">
+                      <i class="far fa-circle"></i>
+                    </div>
+                    <div class="jobster-timeline-info">
+                      <div class="dashboard-timeline-info">
+                        <h6 class="mb-2">{{ cv.projects }}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-box mt-4">
+                <h5 class="resume-experience-title">Awards:</h5>
+                <div class="jobster-candidate-timeline">
+                  <div class="jobster-timeline-item">
+                    <div class="jobster-timeline-cricle">
+                      <i class="far fa-circle"></i>
+                    </div>
+                    <div class="jobster-timeline-info">
+                      <div class="dashboard-timeline-info">
+                        <h6 class="mb-2">{{ cv.awards }}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-box mt-4">
+                <h5 class="resume-experience-title">Skills:</h5>
+                <ul>
+                  <li>{{ cv.skills }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

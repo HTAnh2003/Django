@@ -1,0 +1,65 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    width: 500px;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.to-do-list {
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden; /* Xử lý chiều rộng của phần tử */
+}
+
+.item input[type="checkbox"] {
+    float: left; /* Di chuyển checkbox sang trái */
+}
+
+.item label {
+    margin-left: 10px; /* Tạo khoảng cách giữa checkbox và nút xóa */
+}
+
+.delete-button {
+    float: right; /* Di chuyển nút xóa sang phải */
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    vertical-align: top
+}
+
+form {
+    overflow: hidden; /* Xử lý việc bố trí của các phần tử con */
+}
+
+form input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    float: left; /* Di chuyển input text sang trái */
+}
+
+form button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right; /* Di chuyển button thêm sang phải */
+}
